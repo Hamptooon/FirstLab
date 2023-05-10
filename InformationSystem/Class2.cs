@@ -12,13 +12,15 @@ namespace InformationSystem
         {
             Applicant,
             Expert,
-            FundHolder
+            FundHolder,
+            SystemAdministrator
         }
         public enum ApplicationStatus
         {
             Waiting,
             Apply,
-            Refusal
+            Refusal,
+            WaitingApply
         }
     }
 }

@@ -10,10 +10,10 @@ namespace InformationSystem
     public abstract class User
     {
         private static int globalId = 0;
-        protected string name;
+        public string Name { get => Name; set => Name = value; }
         protected Globals.UserStatus status;
         public int Id { get => Id; private set => Id = value; }
-        public User()
+        public User(string name)
         {
             Authorization();
             Id = ++globalId;

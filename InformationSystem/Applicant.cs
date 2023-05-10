@@ -8,22 +8,23 @@ namespace InformationSystem
 {
     public class Applicant : User
     {
-        public Applicant() : base()
+        public Applicant(string name) : base(name)
         {
             status = Globals.UserStatus.Applicant;
         }
-        private void AddApplication(string name, string information, int userId, int grantId)
+        public void AddApplication(string name, string information, int userId, string grantName)
         {
-            DataBaseManager.AddApplication(name,information, userId, grantId);
+            DataBaseManager.AddApplication(name,information, userId, grantName);
         }
-        private void ApplicationsInformation()
+        public void ApplicationsInformation()
         {
-            DataBaseManager.ApplicantsUserInformation(Id);
+            DataBaseManager.ApplicationsForApplicantInformation(Id);
         }
 
-        private void ChangeApplicationInformation(string name)
+        public void ChangeApplicationInformation(string applicationName)
         {
-            DataBaseManager.ChangeApplicantInformation(name);
+            DataBaseManager.ChangeApplicationInformation(applicationName, Id);
         }
+       
     }
 }
