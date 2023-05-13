@@ -8,9 +8,9 @@ namespace InformationSystem
 {
     public static class DataBaseManager
     {
-        private static List<User> _userList = new List<User>();
-        private static List<Application> _applicationsList = new List<Application>();
-        private static List<Grant> _grantsList = new List<Grant>();
+        public static List<User> _userList = new List<User>();
+        public static List<Application> _applicationsList = new List<Application>();
+        public static List<Grant> _grantsList = new List<Grant>();
 
         public static void AddApplication(string name, string information, int userId, string grantName)
         {
@@ -22,6 +22,7 @@ namespace InformationSystem
                 {
                     grantId = grant.Id;
                     _applicationsList.Add(new Application(name, information, userId, grantId));
+                    Console.WriteLine("Грант добавлен");
                 }
                 else
                 {
@@ -75,8 +76,9 @@ namespace InformationSystem
         {
             Console.WriteLine("Что вы хотите поменять?");
             var choice = Console.ReadLine();
-            foreach (var application in _applicationsList)
+            /*foreach (var application in _applicationsList)
             {
+
                 switch (choice)
                 {
                     case "Информация":
@@ -93,6 +95,31 @@ namespace InformationSystem
                     default:
                         Console.WriteLine("Некорректный выбор.");
                         break;
+                }
+            }
+            */
+            foreach (var application in _applicationsList)
+            {
+                if (application.UserId == userId && application.Name == applicationName && application.status == Globals.ApplicationStatus.Waiting)
+                {
+                    Console.WriteLine("----------------");
+                    switch (choice)
+                    {
+                        case "Информация":
+                            Console.WriteLine("Введите новую информацию:");
+                            application.Information = Console.ReadLine();
+                            break;
+                        case "Название":
+                            Console.WriteLine("Введите новое название:");
+                            application.Name = Console.ReadLine();
+                            break;
+                        case "Удалить заявку":
+                            _applicationsList.RemoveAll(a => a.Name == applicationName && a.UserId == userId);
+                            break;
+                        default:
+                            Console.WriteLine("Некорректный выбор.");
+                            break;
+                    }
                 }
             }
         }
@@ -156,11 +183,13 @@ namespace InformationSystem
         }
         public static void DeleteUser(int userId)
         {
-            foreach(var user in _userList)
+            
+            for (int i = 0; i < _userList.Count; i++)
             {
-                if (user.Id == userId)
+                if (_userList[i].Id == userId)
                 {
-                    _userList.Remove(user);
+                    _userList.RemoveAt(i);
+                    i--;
                 }
             }
         }
@@ -183,6 +212,13 @@ namespace InformationSystem
             
 
 
+        }
+        public static void PrintAllUsers()
+        {
+            foreach (var user in _userList)
+            {
+                Console.WriteLine(user.Name);
+            }
         }
     }
 }

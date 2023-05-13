@@ -12,9 +12,9 @@ namespace InformationSystem
         {
             status = Globals.UserStatus.Applicant;
         }
-        public void AddApplication(string name, string information, int userId, string grantName)
+        public void AddApplication(string name, string information, string grantName)
         {
-            DataBaseManager.AddApplication(name,information, userId, grantName);
+            DataBaseManager.AddApplication(name,information, Id, grantName);
         }
         public void ApplicationsInformation()
         {

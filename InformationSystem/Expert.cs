@@ -8,19 +8,21 @@ namespace InformationSystem
 {
     public class Expert : User
     {
-        public static int ExpertsCount { get => ExpertsCount; private set => ExpertsCount = value; }
+        Random random = new Random();
+        private static int expertsCount;
+        public static int ExpertsCount { get => expertsCount; private set => expertsCount = value; }
         public Expert(string name) : base(name)
         {
-            ExpertsCount++;
+            ExpertsCount+=1;
             status = Globals.UserStatus.Expert;
         }
 
-        public void GradingApplications()
+        public void GradingApplications(string nameApplication)
         {
             List<Application> waitedApplications = ApplicationsForEvaluate();
-            string nameApplication = Console.ReadLine();
+            //string nameApplication = Console.ReadLine();
             Application currentApplication = DataBaseManager.FindApplication(waitedApplications, nameApplication);
-            int grade = int.Parse(Console.ReadLine());
+            int grade = random.Next(1, 20);
             currentApplication.grades.Add(grade);
             currentApplication.checkExpersGraded.Add(this);
             if (currentApplication.checkExpersGraded.Count == ExpertsCount)
@@ -37,11 +39,19 @@ namespace InformationSystem
         {
             List <Application> waitedApplications = new List<Application>();
             waitedApplications =  DataBaseManager.GetApplicationsWithStatus(Globals.ApplicationStatus.Waiting);
-            foreach(Application app in waitedApplications)
+            //foreach(Application app in waitedApplications)
+            //{
+            //    if (app.checkExpersGraded.Contains(this))
+            //    {
+            //        waitedApplications.Remove(app);
+            //    }
+            //}
+            for (int i = 0; i < waitedApplications.Count; i++)
             {
-                if (app.checkExpersGraded.Contains(this))
+                if (waitedApplications[i].checkExpersGraded.Contains(this))
                 {
-                    waitedApplications.Remove(app);
+                    waitedApplications.RemoveAt(i);
+                    i--;
                 }
             }
             return waitedApplications;

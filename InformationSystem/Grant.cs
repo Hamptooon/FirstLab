@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace InformationSystem
 {
-    internal class Grant
+    public class Grant
     {
-        public string Name { get => Name; private set => Name = value; }
+        private static int globalId = 0;
+        private string name;
+        public string Name { get => name; private set => name = value; }
         private float sumGrant;
-        private int id;
-        public int Id { get => Id; private set => Id = value; }
+        private int id = 0;
+
+        public Grant(string name)
+        {
+            Name = name;
+            this.sumGrant = 100f;
+            id = ++globalId;
+        }
+
+        public int Id { get => id; private set => id = value; }
 
         public void GrantInformation()
         {

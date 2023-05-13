@@ -9,11 +9,14 @@ namespace InformationSystem
     public class Application
     {
         private static int globalId = 0;
-        public string Name { get => Name;  set => Name = value; }
-        public string Information { get => Information; set => Information = value; }
+        private string name;
+        public string Name { get => name;  set => name = value; }
+        private string information;
+        public string Information { get => information; set => information = value; }
         public Globals.ApplicationStatus status;
         private int id;
-        public int UserId { get => UserId; private set => UserId = value; }
+        private int userId;
+        public int UserId { get => userId; private set => userId = value; }
         private int grantId;
         public Application(string name, string information, int userId, int grantId)
         {
@@ -32,7 +35,7 @@ namespace InformationSystem
         public void ApplicationInformation() 
         {
 
-            Console.WriteLine($"Информация о заявке ID: {id} Название: {Name} Информация: {Information} ID пользователя: {UserId} ID гранта: {grantId} Оценка: {_grade}");
+            Console.WriteLine($"Информация о заявке ID: {id} Название: {Name} Информация: {Information} ID пользователя: {UserId} ID гранта: {grantId} Оценка: {_grade} Статус: {status} ");
         }
         public void SetAverageGrade()
         {
