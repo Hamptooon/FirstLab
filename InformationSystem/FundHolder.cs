@@ -19,9 +19,7 @@ namespace InformationSystem
         public void GiveGrant(string nameApplication)
         {
             List<Application> waitedApplications = ApplicationsForGranting();
-            //string nameApplication = Console.ReadLine();
             Application currentApplication = DataBaseManager.FindApplication(waitedApplications, nameApplication);
-            //bool isApply = Convert.ToBoolean(Console.ReadLine());
             int Apply = random.Next(0, 2);
             bool[] isApply = new bool[2] { true, false};
             currentApplication.checkApplying.Add(this, isApply[Apply]);
@@ -54,13 +52,6 @@ namespace InformationSystem
         {
             List<Application> waitedApplications = new List<Application>();
             waitedApplications = DataBaseManager.GetApplicationsWithStatus(Globals.ApplicationStatus.WaitingApply);
-            //foreach (Application app in waitedApplications)
-            //{
-            //    if (app.checkApplying.ContainsKey(this))
-            //    {
-            //        waitedApplications.Remove(app);
-            //    }
-            //}
             for (int i = 0; i < waitedApplications.Count; i++)
             {
                 if (waitedApplications[i].checkApplying.ContainsKey(this))

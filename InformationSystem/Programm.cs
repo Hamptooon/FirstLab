@@ -10,60 +10,17 @@ namespace InformationSystem
     {
         static void Main(string[] args)
         {
-            //Applicant[] applicants = new Applicant[30];
-            //for (int i = 0; i < applicants.Length; i++)
-            //{
-            //    applicants[0] = new Applicant("Егор");
-            //}
-            //Expert[] experts = new Expert[10];
-            //for (int i = 0; i < applicants.Length; i++)
-            //{
-            //    experts[0] = new Expert("Игорь");
-            //}
-            //FundHolder[] fundsHolders = new FundHolder[5];
-            //for (int i = 0; i < applicants.Length; i++)
-            //{
-            //    fundsHolders[0] = new FundHolder("Илья");
-            //}
-            //DataBaseManager._userList = new List<User>(applicants);
-            //DataBaseManager._userList.AddRange(experts);
-            //DataBaseManager._userList.AddRange(fundsHolders);
+            var systemAdmin = SystemAdministrator.GetInstance("AdMiN");
 
-            //foreach (var item in DataBaseManager._userList)
-            //{
-            //    if (item.Status == "Applicant")
-            //    {
-            //        var applicant = item as Applicant;
-            //        applicant.AddApplication("asdas", "asdas", "ршшшр");
-            //    }
-            //    else if (item.Status == "Expert")
-            //    {
-            //        var expert = item as Expert;
-            //        expert.GradingApplications();
-            //    }
-            //    else if (item.Status == "FundHolder")
-            //    {
-            //        var fundHolder = item as FundHolder;
-            //        fundHolder.GiveGrant();
-            //    }
-            //}
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
                 DataBaseManager._userList.Add(new Applicant($"Егор_{i}"));
                 DataBaseManager._userList.Add(new Expert($"Игорь_{i}"));
                 DataBaseManager._userList.Add(new FundHolder($"Илья_{i}"));
             }
             Grant grant = new Grant("grant");
-            //Applicant applicant = new Applicant("Егор");
-            //Expert expert = new Expert("Игорь");
-            //Expert expert2 = new Expert("Игорь2");
-            //FundHolder fundHolder = new FundHolder("Илья");
-            //DataBaseManager._userList = new List<User>();
-            //DataBaseManager._userList.Add(applicant);
-            //DataBaseManager._userList.Add(expert);
-            //DataBaseManager._userList.Add(expert2);
-            //DataBaseManager._userList.Add(fundHolder);
             DataBaseManager._grantsList.Add(grant);
+            //
             foreach (var applicant in DataBaseManager._userList)
             {
                 if (applicant is Applicant)
@@ -127,23 +84,6 @@ namespace InformationSystem
                     }
                 }
             }
-            //applicant.AddApplication("Zayvka", "Info", "grant");
-            //applicant.AddApplication("Zayvka_1", "Info", "grant");
-            //applicant.ApplicationsInformation();
-            //expert.GradingApplications();
-            //expert2.GradingApplications();  
-            //fundHolder.ApplicationsWaitingInformation();
-            //applicant.ApplicationsInformation();
-            //fundHolder.GiveGrant();
-            //fundHolder.ApplicationsApplyInformation();
-            //applicant.ApplicationsInformation();
-            //SystemAdministrator admin = new SystemAdministrator("AAAA");
-            //DataBaseManager.PrintAllUsers();
-            //admin.DeleteUser(1);
-            //DataBaseManager.PrintAllUsers();
-
-
-
         }
 
     }

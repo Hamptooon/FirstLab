@@ -8,9 +8,17 @@ namespace InformationSystem
 {
     public class SystemAdministrator : User
     {
-        public SystemAdministrator(string name) : base(name)
+        private static SystemAdministrator _instance;
+        private SystemAdministrator(string name) : base(name)
         {
             status = Globals.UserStatus.SystemAdministrator;
+        }
+        public static SystemAdministrator GetInstance(string name) {
+            if (_instance == null)
+            {
+                _instance = new SystemAdministrator(name);
+            }
+            return _instance;
         }
         public void AddUser(string name, Globals.UserStatus status)
         {

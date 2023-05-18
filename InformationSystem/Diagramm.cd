@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InformationSystem.Applicant">
+    <Position X="7.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAEAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Applicant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.Application">
+    <Position X="1" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAGAABEBBAAAAAiACAAAwAAAAEAAAIAQAAAAAAAgA=</HashCode>
+      <FileName>Application.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.DataBaseManager">
+    <Position X="3.5" Y="3.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAABCEAAAAAACEEAAAAAAIAAAAAAAwAIIAAQAACQA=</HashCode>
+      <FileName>DataBaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.Expert">
+    <Position X="10.5" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAwAAAAAAAAAAAAAIQAAACAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Expert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.FundHolder">
+    <Position X="13.75" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAQAAAAAAAgABAAAQEQAAAAAA=</HashCode>
+      <FileName>FundHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.SystemAdministrator">
+    <Position X="17.25" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABCAAQAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SystemAdministrator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.Grant">
+    <Position X="20.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAAAAAAAAAQAAAAEAAAIAIAAAAAAAgA=</HashCode>
+      <FileName>Grant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.Globals">
+    <Position X="23" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="InformationSystem.Globals.UserStatus">
+        <TypeIdentifier>
+          <NewMemberFileName>Globals.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="InformationSystem.Globals.ApplicationStatus">
+        <TypeIdentifier>
+          <NewMemberFileName>Globals.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InformationSystem.User">
+    <Position X="13.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAEAAAAAAAAAAAAAAQAAAAEAAAIAAAAAEAAAgA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
