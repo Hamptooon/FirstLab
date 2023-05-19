@@ -69,12 +69,14 @@ namespace InformationSystem
         }
         public static void ChangeApplicationInformation(string applicationName, int userId)
         {
-            Console.WriteLine("Что вы хотите поменять?");
-            var choice = Console.ReadLine();
+            bool _isFinded =false;
             foreach (var application in _applicationsList)
             {
                 if (application.UserId == userId && application.Name == applicationName && application.status == Globals.ApplicationStatus.Waiting)
                 {
+                    _isFinded = true;
+                    Console.WriteLine("Что вы хотите поменять?");
+                    var choice = Console.ReadLine();
                     Console.WriteLine("----------------");
                     switch (choice)
                     {
@@ -94,6 +96,10 @@ namespace InformationSystem
                             break;
                     }
                 }
+            }
+            if (_isFinded ==false)
+            {
+                Console.WriteLine("Заявка на грант не найдена");
             }
         }
 

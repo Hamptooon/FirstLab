@@ -38,5 +38,10 @@ namespace InformationSystem
         {
             DataBaseManager.AddApplication(name, information, userId, grantName);
         }
+
+        public void ApllicationsInformation(int applicantId)
+        {
+            DataBaseManager.ApplicationsForApplicantInformation(applicantId);
+        }
     }
 }
