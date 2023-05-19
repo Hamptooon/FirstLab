@@ -9,19 +9,18 @@ namespace InformationSystem
     public class Grant
     {
         private static int globalId = 0;
-        private string name;
-        public string Name { get => name; private set => name = value; }
+        public string Name { get ; private set ; }
         private float sumGrant;
         private int id = 0;
 
         public Grant(string name)
         {
             Name = name;
-            this.sumGrant = 100f;
-            id = ++globalId;
+            sumGrant = 100f;
+            Id = ++globalId;
         }
 
-        public int Id { get => id; private set => id = value; }
+        public int Id { get; private set ; }
 
         public void GrantInformation()
         {

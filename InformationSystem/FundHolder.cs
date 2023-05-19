@@ -4,8 +4,7 @@ namespace InformationSystem
     public class FundHolder : User
     {
         Random random = new Random();
-        private static int fundsHolderCount;
-        public static int FundsHolderCount { get => fundsHolderCount; private set => fundsHolderCount = value; }
+        public static int FundsHolderCount { get ; private set ; }
         public FundHolder(string name) : base(name)
         {
             FundsHolderCount++;
