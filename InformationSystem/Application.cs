@@ -38,6 +38,29 @@ namespace InformationSystem
             }
             _grade = sumGrades/grades.Count;
         }
-
+        public void SetAverageApply()
+        {
+            int counter = 0;
+            foreach (var key in checkApplying.Values)
+            {
+                if (key == true)
+                {
+                    counter++;
+                }
+                else
+                {
+                    counter--;
+                }
+            }
+            if (counter > 0)
+            {
+                status = Globals.ApplicationStatus.Apply;
+                Console.WriteLine("give");
+            }
+            else
+            {
+                status = Globals.ApplicationStatus.Refusal;
+            }
+        }
     }
 }

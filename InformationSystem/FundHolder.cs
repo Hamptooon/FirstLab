@@ -19,27 +19,7 @@ namespace InformationSystem
             currentApplication.checkApplying.Add(this, isApply[Apply]);
             if (currentApplication.checkApplying.Count == FundsHolderCount)
             {
-                int counter = 0;
-                foreach (var key in currentApplication.checkApplying.Values)
-                {
-                    if (key == true)
-                    {
-                        counter++;
-                    }
-                    else
-                    {
-                        counter--;
-                    }
-                }
-                if (counter > 0)
-                {
-                    currentApplication.status = Globals.ApplicationStatus.Apply;
-                    Console.WriteLine("give");
-                }
-                else
-                {
-                    currentApplication.status = Globals.ApplicationStatus.Refusal;
-                }
+                currentApplication.SetAverageApply();
             }
         }
         private List<Application> ApplicationsForGranting()
