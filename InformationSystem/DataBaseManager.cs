@@ -167,10 +167,22 @@ namespace InformationSystem
             {
                 if (_userList[i].Id == userId)
                 {
+                    if (_userList[i].Status == "Applicant")
+                    {
+                        for (int j = 0; j < _applicationsList.Count; j++)
+                        {
+                            if (_applicationsList[j].UserId ==userId)
+                            {
+                                _applicationsList.RemoveAt(j);
+                                j--;
+                            }
+                        }
+                    }
                     _userList.RemoveAt(i);
                     i--;
                 }
             }
+            
         }
         public static void ChangeUserName(int userId, string newName)
         {
