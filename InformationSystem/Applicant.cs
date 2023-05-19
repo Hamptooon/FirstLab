@@ -11,10 +11,6 @@ namespace InformationSystem
         {
             DataBaseManager.AddApplication(name,information, Id, grantName);
         }
-        public void ApplicationsInformation()
-        {
-            DataBaseManager.ApplicationsForApplicantInformation(Id);
-        }
 
         public void ChangeApplicationInformation(string applicationName)
         {

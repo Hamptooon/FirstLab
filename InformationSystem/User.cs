@@ -15,6 +15,26 @@ namespace InformationSystem
             Id = ++globalId;
         }
         protected virtual void Info() { }
+        public void ApplicationsInformation()
+        {
+            if (status == Globals.UserStatus.Applicant)
+            {
+                DataBaseManager.ApplicationsForApplicantInformation(Id);
+            }
+            else if (status == Globals.UserStatus.Expert)
+            {
+                DataBaseManager.ApplicationsWaitingForExpertInformation();
+            }
+            else if (status == Globals.UserStatus.FundHolder)
+            {
+                DataBaseManager.ApplicationsWaitingForFundHolderInformation();
+            }
+            else if (status == Globals.UserStatus.SystemAdministrator)
+            {
+                string applicantId = Console.ReadLine();
+                DataBaseManager.ApplicationsForApplicantInformation(int.Parse(applicantId));
+            }
+        }
     }
 
  

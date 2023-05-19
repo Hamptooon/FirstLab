@@ -24,10 +24,7 @@ namespace InformationSystem
                 currentApplication.status = Globals.ApplicationStatus.WaitingApply;
             }
         }
-        public void ApplicationsWaitingInformation()
-        {
-            DataBaseManager.ApplicationsWaitingForExpertInformation();
-        }
+
         private List<Application> ApplicationsForEvaluate()
         {
             List <Application> waitedApplications = new List<Application>();

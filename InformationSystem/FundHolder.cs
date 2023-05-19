@@ -55,11 +55,7 @@ namespace InformationSystem
                 }
             }
             return waitedApplications;
-        }
-        public void ApplicationsWaitingInformation()
-        {
-            DataBaseManager.ApplicationsWaitingForFundHolderInformation();
-        }
+        } 
         public void ApplicationsApplyInformation()
         {
             DataBaseManager.ApplicationsApplyForFundHolderInformation();
