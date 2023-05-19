@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace InformationSystem
 {
     public class Application
     {
         private static int globalId = 0;
-        private string name;
-        public string Name { get => name;  set => name = value; }
-        private string information;
-        public string Information { get => information; set => information = value; }
+        public string Name { get;  set; }
+        public string Information { get ; set ; }
         public Globals.ApplicationStatus status;
         private int id;
-        private int userId;
-        public int UserId { get => userId; private set => userId = value; }
+        public int UserId { get ; private set; }
         private int grantId;
         public Application(string name, string information, int userId, int grantId)
         {

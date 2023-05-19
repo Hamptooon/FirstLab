@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace InformationSystem
 {
     public class Programm
@@ -20,7 +15,6 @@ namespace InformationSystem
             }
             Grant grant = new Grant("grant");
             DataBaseManager._grantsList.Add(grant);
-            //
             foreach (var applicant in DataBaseManager._userList)
             {
                 if (applicant is Applicant)

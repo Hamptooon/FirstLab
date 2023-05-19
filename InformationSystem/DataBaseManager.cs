@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace InformationSystem
 {
     public static class DataBaseManager
@@ -76,28 +71,6 @@ namespace InformationSystem
         {
             Console.WriteLine("Что вы хотите поменять?");
             var choice = Console.ReadLine();
-            /*foreach (var application in _applicationsList)
-            {
-
-                switch (choice)
-                {
-                    case "Информация":
-                        Console.WriteLine("Введите новую информацию:");
-                        application.Information = Console.ReadLine();
-                        break;
-                    case "Название":
-                        Console.WriteLine("Введите новое название:");
-                        application.Name = Console.ReadLine();
-                        break;
-                    case "Удалить заявку":
-                        _applicationsList.RemoveAll(a => a.Name == applicationName && a.UserId == userId);
-                        break;
-                    default:
-                        Console.WriteLine("Некорректный выбор.");
-                        break;
-                }
-            }
-            */
             foreach (var application in _applicationsList)
             {
                 if (application.UserId == userId && application.Name == applicationName && application.status == Globals.ApplicationStatus.Waiting)
